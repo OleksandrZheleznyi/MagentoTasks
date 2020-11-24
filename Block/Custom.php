@@ -45,10 +45,8 @@ class Custom extends \Magento\Catalog\Block\Product\View
  
         $attributes = $_product->getAttributes();
 
-        $positionLabel = $attributes['body_position']->getFrontendLabel();
-
         $positionAttribute = $attributes['body_position']->getFrontend()->getValue($_product);
 
-        return "<b>" . $positionLabel . ": ". "</b>". $positionAttribute;
+        return $positionAttribute;
     }
 }

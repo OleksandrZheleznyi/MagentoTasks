@@ -15,9 +15,10 @@ class BodyPosition extends \Magento\Eav\Model\Entity\Attribute\Frontend\Abstract
             return "";
         }
 
+        $positionLabel = $this->getAttribute()->getFrontendLabel();
         $label = $object->getAttributeText($this->getAttribute()->getAttributeCode());
 
-        return $label . "(top: " . $result['x'] . "/left: " . $result['y'] . ")";
+        return "<b>" . $positionLabel . ": ". "</b>". $label . "(top: " . $result['x'] . "/left: " . $result['y'] . ")";
     }
 
     protected $mass =
@@ -31,6 +32,7 @@ class BodyPosition extends \Magento\Eav\Model\Entity\Attribute\Frontend\Abstract
     protected function getMass(string $val)
     {
         $value = $val;
+        $returnParam = null;
 
         if (array_key_exists($value, $this->mass))
         {
