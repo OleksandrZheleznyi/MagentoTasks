@@ -45,6 +45,12 @@ class Custom extends \Magento\Catalog\Block\Product\View
  
         $attributes = $_product->getAttributes();
 
+
+        // if (array_key_exists($value, $this->mass))
+        // {
+        //     $returnParam = $this->mass[$value];
+        // }
+
         $positionAttribute = $attributes['body_position']->getFrontend()->getValue($_product);
 
         return $positionAttribute;

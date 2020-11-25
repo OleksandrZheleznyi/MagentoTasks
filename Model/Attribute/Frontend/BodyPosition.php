@@ -4,6 +4,14 @@ namespace Perspective\BodyPositionAttribute\Model\Attribute\Frontend;
 
 class BodyPosition extends \Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFrontend
 {
+    protected $mass =
+    [
+        '1' => ['x' => 10, 'y' => 50],
+        '2' => ['x' => 35, 'y' => 65],
+        '3' => ['x' => 125, 'y' => 15],
+        '4' => ['x' => 99, 'y' => 99],
+    ];
+
     public function getValue(\Magento\Framework\DataObject $object)
     {
         $value = $object->getData($this->getAttribute()->getAttributeCode());
@@ -20,14 +28,6 @@ class BodyPosition extends \Magento\Eav\Model\Entity\Attribute\Frontend\Abstract
 
         return "<b>" . $positionLabel . ": ". "</b>". $label . "(top: " . $result['x'] . "/left: " . $result['y'] . ")";
     }
-
-    protected $mass =
-    [
-        '1' => ['x' => 10, 'y' => 50],
-        '2' => ['x' => 35, 'y' => 65],
-        '3' => ['x' => 125, 'y' => 15],
-        '4' => ['x' => 99, 'y' => 99],
-    ];
 
     protected function getMass(string $val)
     {

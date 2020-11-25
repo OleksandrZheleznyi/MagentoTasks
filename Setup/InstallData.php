@@ -21,6 +21,7 @@ class InstallData implements InstallDataInterface
     {
         $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
 
+        //В константу
         $attributeCode = 'body_position';
 
         $eavSetup->addAttribute(\Magento\Catalog\Model\Product::ENTITY, $attributeCode,
